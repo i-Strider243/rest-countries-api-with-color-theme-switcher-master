@@ -40,8 +40,8 @@ Things I added for users:
 
 ### Links
 
-- [Solution URL](https://your-solution-url.com)
-- [Live Site URL](https://your-live-site-url.com)
+- [Solution URL](https://www.frontendmentor.io/solutions/estcountries-api-made-WQ5qctt0Lx)
+- [Live Site URL](https://github.com/i-Strider243/rest-countries-api-with-color-theme-switcher-master)
 
 ## My process
 
