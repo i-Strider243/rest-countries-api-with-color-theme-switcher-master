@@ -1,0 +1,229 @@
+:root {
+  font-family: "Nunito Sans", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  background-color: transparent;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Nunito Sans";
+  src: url("/src/assets/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf") format("truetype");
+  font-weight: 300 800;
+  font-style: normal;
+  font-display: swap;
+}
+img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+#root {
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  flex: 1;
+}
+
+.header h1 {
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.timeline {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.timeline::-webkit-scrollbar {
+  display: none;
+}
+
+.home-page {
+  padding: 2rem 2rem;
+  position: relative;
+}
+
+nav {
+  margin-bottom: 2rem;
+}
+nav .nav-container {
+  gap: 3rem;
+  flex-direction: column;
+}
+nav .select-placeholder {
+  font-size: 12px;
+}
+
+.filtered-list {
+  --sb-track-color: #808080;
+  --sb-thumb-color: #fcfcfc;
+  --sb-size: 6px;
+  background-color: #fcfcfc;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  z-index: 100;
+  width: 256px;
+  max-height: 214px;
+  overflow-y: auto;
+  list-style: none;
+  text-align: left;
+  padding: 4px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.filtered-list::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+.filtered-list::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 3px;
+}
+.filtered-list::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 3px;
+  border: 1px solid #304048;
+}
+@supports not selector(::-webkit-scrollbar) {
+  .filtered-list {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+}
+.filtered-list li {
+  border-radius: 4px;
+  cursor: pointer;
+}
+.filtered-list li:hover {
+  background-color: rgba(128, 128, 128, 0.5);
+  color: #fcfcfc;
+}
+
+.filtered-list.dark {
+  --sb-track-color: #202c37;
+  --sb-thumb-color: #2b3945;
+  --sb-size: 6px;
+  background-color: #2b3945;
+  color: #fcfcfc;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.link-card {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.card {
+  font-size: 14px;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+}
+
+.details-page {
+  padding: 2rem;
+  font-size: 16px;
+  height: calc(100% - 76px);
+}
+.details-page .link__row {
+  align-self: flex-start;
+  margin: 2rem 0;
+  justify-self: flex-start;
+}
+
+.details-card {
+  width: 100%;
+  max-width: 1400px;
+  font-size: 16px;
+  text-align: left;
+  margin: 0 auto;
+  background-color: transparent;
+}
+.details-card > div .card-description div + div {
+  margin-block: 2rem;
+}
+.details-card .card-description__row div p {
+  line-height: 2;
+}
+
+@media (min-width: 556px) {
+  .home-page {
+    padding: 2rem 4rem;
+  }
+  .header h1 {
+    font-size: 1.5rem;
+  }
+  nav .nav-container {
+    flex-direction: row;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+  .details-page {
+    padding: 2rem 4rem;
+  }
+  .details-page .border-countries {
+    justify-content: flex-start;
+  }
+  .details-card .ant-card-cover {
+    width: 100%;
+  }
+  .details-card > div:last-child {
+    flex: 1 1 55%;
+    min-width: 230px;
+  }
+  .card-description {
+    display: flex;
+    flex-direction: column;
+  }
+  .card-description .card-description__row {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+@media (min-width: 950px) {
+  .details-card .card-description {
+    gap: 4rem;
+  }
+  .details-card .card-description__row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .details-card > div .card-description div + div {
+    margin-block: 0;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
